@@ -1,0 +1,63 @@
+/* src/Components/Searchbar/Searchbar.css */
+.searchbar-wrapper {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.searchbar-input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.searchbar-input-row input {
+  flex: 1;
+  padding: 10px 14px;
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #e6edf3;
+  font-size: 15px;
+  outline: none;
+}
+
+.searchbar-input-row input:focus {
+  border-color: #58a6ff;
+}
+
+.searchbar-input-row button {
+  padding: 10px 20px;
+  background-color: #238636;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.searchbar-input-row button:hover:not(:disabled) {
+  background-color: #2ea043;
+}
+
+.searchbar-input-row button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-error {
+  color: #f85149;
+  font-size: 14px;
+}
+
+.search-empty {
+  color: #8b949e;
+  font-size: 14px;
+}
