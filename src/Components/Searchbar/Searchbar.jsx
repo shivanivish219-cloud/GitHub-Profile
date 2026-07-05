@@ -1,6 +1,6 @@
 // src/Components/Searchbar/Searchbar.jsx
 import { useEffect, useState } from "react";
-import UserCard from "../Components/UserCard/UserCard";
+import UserCard from "../Components/Usercard/Usercard";
 import axios from "axios";
 import "./Searchbar.css";
 
