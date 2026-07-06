@@ -9,7 +9,8 @@ import Repositories from "../Pages/Repositories/Repositories";
 import Gists from "../Pages/Gists/Gists";
 import Followers from "../Pages/Followers/Followers";
 import Following from "../Pages/Following/Following";
-import UserCard from "../Components/Usercard/Usercard";
+// import UserCard from "../Components/UserCard/UserCard";
+
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
         element: <Search />,
       },
       // {
-      //   path: "/users/:username",
+      //   path: "/users/:usercard",
       //   element: <UserCard />,
       // },
       {
