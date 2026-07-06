@@ -1,7 +1,7 @@
 // src/Routes/AppRouter.jsx
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Navbar from "../Components/Navbar/Navbar";
+// import Navbar from "../Components/Navbar/Navbar";
 import Home from "../Pages/Home/Home";
 import Search from "../Pages/Search/Search";
 import UserProfile from "../Pages/UserProfile/UserProfile";
@@ -10,7 +10,8 @@ import Gists from "../Pages/Gists/Gists";
 import Followers from "../Pages/Followers/Followers";
 import Following from "../Pages/Following/Following";
 // import UserCard from "../Components/UserCard/UserCard";
-
+import Navbar from "../Components/Navbar/Navbar";
+// import UserCard from "../UserCard/UserCard";
 
 const router = createBrowserRouter([
   {

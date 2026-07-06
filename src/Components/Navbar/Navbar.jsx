@@ -1,36 +1,52 @@
-import { NavLink, Outlet } from "react-router-dom";
-import "./Navbar.css";
+import { Outlet } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
+import {
+  Nav,
+  Logo,
+  NavList,
+  StyledNavLink,
+  Main,
+  ThemeButton,
+} from "./Navbar.styles";
+// import "./Navbar.css";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 function Navbar() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
     <>
-      <nav>
-        <h2>Github Profiler</h2>
+      <Nav>
+        <Logo>
+          <FaGithub size={30} />
+          <span>GitHub Profiler</span>
+        </Logo>
 
-        <ul>
+        <NavList>
           <li>
-            <NavLink to="/" end>
+            <StyledNavLink to="/" end>
               Home
-            </NavLink>
+            </StyledNavLink>
           </li>
           <li>
-            <NavLink to="/search">Search</NavLink>
+            <StyledNavLink to="/search">Search</StyledNavLink>
           </li>
           {/* <li>
-            <NavLink to="/followers">Followers</NavLink>
+            <StyledNavLink to="/followers">Followers</StyledNavLink>
           </li>
           <li>
-            <NavLink to="/following">Following</NavLink>
+            <StyledNavLink to="/following">Following</StyledNavLink>
           </li> */}
-          <li>
-            <NavLink to="/repositories">Repositories</NavLink>
-          </li>
-        </ul>
-      </nav>
+        </NavList>
+        <ThemeButton onClick={toggleTheme}>
+          {theme === "dark" ? "🌞 Light" : "🌙 Dark"}
+        </ThemeButton>
+      </Nav>
 
-      <main>
+      <Main>
         <Outlet />
-      </main>
+      </Main>
     </>
   );
 }
