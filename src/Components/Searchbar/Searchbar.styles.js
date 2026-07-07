@@ -19,7 +19,7 @@ export const SearchInput = styled.input`
   background-color: #0d1117;
   border: 1px solid #30363d;
   border-radius: 6px;
-  color: #e6edf3;
+  color: #ffffff;
   font-size: 15px;
   outline: none;
 

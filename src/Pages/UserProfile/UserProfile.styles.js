@@ -10,7 +10,7 @@ export const ProfileContainer = styled.div`
 export const ProfileHeader = styled.div`
   display: flex;
   align-items: flex-start;
-  gap: 20px;
+  gap: 25px;
   margin-bottom: 24px;
 `;
 
@@ -22,7 +22,7 @@ export const Avatar = styled.img`
 `;
 
 export const Name = styled.h1`
-  color: whitesmoke;
+  color: #77d684;
   font-size: 22px;
   margin: 0 0 4px;
 `;
@@ -51,7 +51,7 @@ export const Stat = styled.div`
 `;
 
 export const StatValue = styled.span`
-  color: #dfdba3;
+  color: #9d9dad;
   font-size: 20px;
   font-weight: 600;
 `;
@@ -62,24 +62,77 @@ export const StatLabel = styled.span`
 `;
 
 export const Location = styled.p`
-  color: #ffffff;
+  color: #ff0101;
   font-size: 14px;
   margin-bottom: 20px;
 `;
 
-export const GithubLink = styled.a`
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #238636;
-  color: #2e2353;
-  border-radius: 6px;
+export const Company = styled.p`
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const Website = styled.a`
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #58a6ff;
   text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: background-color 0.15s ease;
 
   &:hover {
-    background-color: #2ea043;
+    text-decoration: underline;
+  }
+`;
+
+export const Twitter = styled.a`
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #58a6ff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+// import styled from "styled-components";
+
+export const GithubLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-top: 20px;
+  padding: 12px 20px;
+
+  background: #24292f;
+  color: white;
+
+  border-radius: 8px;
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+
+  svg {
+    font-size: 20px;
+  }
+
+  &:hover {
+    background: #000;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 `;
 

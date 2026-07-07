@@ -103,6 +103,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getUserProfile } from "../../Services/service";
+import { FaGithub, FaBuilding, FaGlobe, FaTwitter } from "react-icons/fa";
 import {
   ProfileContainer,
   ProfileHeader,
@@ -115,6 +116,9 @@ import {
   StatValue,
   StatLabel,
   Location,
+  Twitter,
+  Company,
+  Website,
   GithubLink,
   ProfileStatus,
   ProfileError,
@@ -185,10 +189,45 @@ function UserProfile() {
         </Stat>
       </Stats>
 
+      {/* Location */}
       {user.location && <Location>📍 {user.location}</Location>}
 
+      {/* Company */}
+      {user.company && (
+        <Company>
+          <FaBuilding /> {user.company}
+        </Company>
+      )}
+
+      {/* Website / Blog */}
+      {user.blog && (
+        <Website
+          href={
+            user.blog.startsWith("http") ? user.blog : `https://${user.blog}`
+          }
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaGlobe /> {user.blog}
+        </Website>
+      )}
+
+      {/* Twitter */}
+      {user.twitter_username && (
+        <Twitter
+          href={`https://x.com/${user.twitter_username}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <FaTwitter /> @{user.twitter_username}
+        </Twitter>
+      )}
+
+      {/* GitHub Profile */}
+
       <GithubLink href={user.html_url} target="_blank" rel="noreferrer">
-        GitHub
+        <FaGithub />
+        {user.html_url}
       </GithubLink>
     </ProfileContainer>
   );

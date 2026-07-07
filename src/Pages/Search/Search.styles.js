@@ -6,7 +6,7 @@ export const SearchPage = styled.div`
 `;
 
 export const SearchTitle = styled.h2`
-  color: #fff;
+  color: #84d179;
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
