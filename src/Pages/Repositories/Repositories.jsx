@@ -61,12 +61,13 @@
 
 // export default Repositories;
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { getRepositories } from "../../Services/service";
 import {
   PageContainer,
   PageTitle,
+  SearchInput,
   RepoList,
   RepoCard,
   RepoTop,
@@ -80,6 +81,7 @@ function Repositories() {
   const { username } = useParams();
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     async function FetchUser() {
@@ -98,14 +100,27 @@ function Repositories() {
     FetchUser();
   }, [username]);
 
+  const FilteredRepos = useMemo(() => {
+    return repos.filter((repo) =>
+      repo.name.toLowerCase().includes(search.toLowerCase()),
+    );
+  }, [repos, search]);
+
   if (loading) return <PageContainer>Loading....</PageContainer>;
 
   return (
     <PageContainer>
       <PageTitle>@{username} - Repositories</PageTitle>
 
+      <SearchInput
+        type="text"
+        placeholder="🔍 Search Repositories"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+
       <RepoList>
-        {repos.map((repo) => (
+        {FilteredRepos.map((repo) => (
           <RepoCard
             key={repo.id}
             href={repo.html_url}

@@ -16,6 +16,33 @@ export const PageTitle = styled.h2`
   margin-bottom: 20px;
 `;
 
+export const SearchInput = styled.input`
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 16px;
+  margin: 20px auto;
+  display: block;
+
+  border: 1px solid ${({ theme }) => theme.border};
+  border-radius: 10px;
+
+  background: ${({ theme }) => theme.cardBackground};
+  color: ${({ theme }) => theme.text};
+
+  font-size: 16px;
+  outline: none;
+
+  transition: 0.3s ease;
+
+  &::placeholder {
+    color: ${({ theme }) => theme.textSecondary};
+  }
+
+  &:focus {
+    border-color: ${({ theme }) => theme.primary};
+    box-shadow: 0 0 8px ${({ theme }) => theme.primary}40;
+  }
+`;
 // "page-status" wala style - Followers/Following/Gists sab isko reuse
 // karte the (loading text)
 export const PageStatus = styled.p`
